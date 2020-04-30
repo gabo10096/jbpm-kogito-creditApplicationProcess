@@ -1,0 +1,519 @@
+<bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:bpsim="http://www.bpsim.org/schemas/1.0" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:drools="http://www.jboss.org/drools" id="_5dUAoGsPEDicvadNCJJcIQ" exporter="jBPM Process Modeler" exporterVersion="2.0" targetNamespace="http://www.omg.org/bpmn20">
+  <bpmn2:itemDefinition id="_creditApplicationItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__4338A14D-A2E3-486E-BB87-A0106C7D11CF_namespaceInputXItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="__4338A14D-A2E3-486E-BB87-A0106C7D11CF_modelInputXItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="__4338A14D-A2E3-486E-BB87-A0106C7D11CF_decisionInputXItem" structureRef="java.lang.String"/>
+  <bpmn2:itemDefinition id="__4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationInputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationOutputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_SkippableInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_PriorityInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_CommentInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_DescriptionInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_CreatedByInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_TaskNameInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_GroupIdInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_ContentInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_NotStartedReassignInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_NotCompletedReassignInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_NotStartedNotifyInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_NotCompletedNotifyInputXItem" structureRef="Object"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationInputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationOutputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationInputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationOutputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationInputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationOutputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationInputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:itemDefinition id="__293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationOutputXItem" structureRef="com.bbva.kgtmx.model.CreditApplication"/>
+  <bpmn2:interface id="_35D5DAB0-8458-4516-9E93-1040A3FF0765_ServiceInterface" name="com.bbva.kgtmx.services.CreditApplicationService" implementationRef="com.bbva.kgtmx.services.CreditApplicationService">
+    <bpmn2:operation id="_35D5DAB0-8458-4516-9E93-1040A3FF0765_ServiceOperation" name="approvedByAmount" implementationRef="approvedByAmount"/>
+  </bpmn2:interface>
+  <bpmn2:interface id="_0E5E8930-F26C-4041-ACC9-C4937617ECB3_ServiceInterface" name="com.bbva.kgtmx.services.CreditApplicationService" implementationRef="com.bbva.kgtmx.services.CreditApplicationService">
+    <bpmn2:operation id="_0E5E8930-F26C-4041-ACC9-C4937617ECB3_ServiceOperation" name="denied" implementationRef="denied"/>
+  </bpmn2:interface>
+  <bpmn2:interface id="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_ServiceInterface" name="com.bbva.kgtmx.services.CreditApplicationService" implementationRef="com.bbva.kgtmx.services.CreditApplicationService">
+    <bpmn2:operation id="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_ServiceOperation" name="approvedByRevision" implementationRef="approvedByRevision"/>
+  </bpmn2:interface>
+  <bpmn2:process id="creditApplications" drools:packageName="com.bbva.kgtmx" drools:version="1.0" drools:adHoc="false" name="Credit Application Process" isExecutable="true" processType="Public">
+    <bpmn2:extensionElements>
+      <drools:metaData name="customDescription">
+        <drools:metaValue><![CDATA[Credit Application Process]]></drools:metaValue>
+      </drools:metaData>
+      <drools:import name="com.bbva.kgtmx.model.CreditApplication"/>
+      <drools:metaData name="customDescription">
+        <drools:metaValue><![CDATA[Credit Application Process]]></drools:metaValue>
+      </drools:metaData>
+      <drools:metaData name="customDescription">
+        <drools:metaValue><![CDATA[Credit Application Process]]></drools:metaValue>
+      </drools:metaData>
+      <drools:metaData name="customDescription">
+        <drools:metaValue><![CDATA[Credit Application Process]]></drools:metaValue>
+      </drools:metaData>
+    </bpmn2:extensionElements>
+    <bpmn2:property id="creditApplication" itemSubjectRef="_creditApplicationItem" name="creditApplication"/>
+    <bpmn2:sequenceFlow id="_50BE6800-F3DC-4A96-B5AD-F1E8C9E1956C" sourceRef="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC" targetRef="_71B41A59-0DBB-4A28-BDAF-CECC6C7A3F4E">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_0EB2C315-214B-4CAF-8A01-E354E5A6FF58" sourceRef="_0E5E8930-F26C-4041-ACC9-C4937617ECB3" targetRef="_FA583BA0-A62D-4460-9706-440733256549"/>
+    <bpmn2:sequenceFlow id="_21BD88BA-0E69-4022-8AB8-9344AFD51E98" sourceRef="_35D5DAB0-8458-4516-9E93-1040A3FF0765" targetRef="_ADC3548F-B236-4F22-8696-8C72B338006D"/>
+    <bpmn2:sequenceFlow id="_CA707645-9322-420A-9B1B-C99C3EEDEA04" name="approved" sourceRef="_AC08293D-A516-4BE3-A288-5A106AA41980" targetRef="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[approved]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return creditApplication.isApproved() == true;]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_81FD21DF-074F-4E6D-A62A-EE349D44F41A" name="denied" sourceRef="_AC08293D-A516-4BE3-A288-5A106AA41980" targetRef="_0E5E8930-F26C-4041-ACC9-C4937617ECB3">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[denied]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return creditApplication.isApproved() == false;]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_DAC9E42B-5440-48F0-9587-2F7799BF2062" name="amount &amp;lt; 10k" sourceRef="_B85F96F2-DADA-4925-B863-516C92578E24" targetRef="_35D5DAB0-8458-4516-9E93-1040A3FF0765">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[amount < 10k]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return creditApplication.isApproved() == true;]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_FD08EAC8-BCAB-43DF-B117-B5B9DEC0BB22" sourceRef="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D" targetRef="_AC08293D-A516-4BE3-A288-5A106AA41980"/>
+    <bpmn2:sequenceFlow id="_5BCC6B34-AF43-4375-879D-7B2D301BDC65" name="amount &amp;gt;= 10k" sourceRef="_B85F96F2-DADA-4925-B863-516C92578E24" targetRef="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[amount >= 10k]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression" language="http://www.java.com/java"><![CDATA[return creditApplication.isApproved() == false;]]></bpmn2:conditionExpression>
+    </bpmn2:sequenceFlow>
+    <bpmn2:sequenceFlow id="_8754FCC8-8096-48A4-9D31-06C6639EB965" sourceRef="_4338A14D-A2E3-486E-BB87-A0106C7D11CF" targetRef="_B85F96F2-DADA-4925-B863-516C92578E24"/>
+    <bpmn2:sequenceFlow id="_DD98776F-F4FC-4F66-A84D-F3B152E7FE0D" sourceRef="_C5F7DC5F-5760-46F9-902D-C66DE6FF7BE3" targetRef="_4338A14D-A2E3-486E-BB87-A0106C7D11CF">
+      <bpmn2:extensionElements>
+        <drools:metaData name="isAutoConnection.target">
+          <drools:metaValue><![CDATA[true]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+    </bpmn2:sequenceFlow>
+    <bpmn2:endEvent id="_71B41A59-0DBB-4A28-BDAF-CECC6C7A3F4E" name="approved">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[approved]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_50BE6800-F3DC-4A96-B5AD-F1E8C9E1956C</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:serviceTask id="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC" drools:serviceimplementation="Java" drools:serviceinterface="com.bbva.kgtmx.services.CreditApplicationService" drools:serviceoperation="approvedByRevision" name="Application APPROVED by manual revision" implementation="Java" operationRef="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_ServiceOperation">
+      <bpmn2:documentation><![CDATA[Application APPROVED by manual revision]]></bpmn2:documentation>
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Application APPROVED by manual revision]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_CA707645-9322-420A-9B1B-C99C3EEDEA04</bpmn2:incoming>
+      <bpmn2:outgoing>_50BE6800-F3DC-4A96-B5AD-F1E8C9E1956C</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationInputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationInputXItem" name="creditApplication"/>
+        <bpmn2:dataOutput id="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationOutputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationOutputXItem" name="creditApplication"/>
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet>
+          <bpmn2:dataOutputRefs>_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:sourceRef>creditApplication</bpmn2:sourceRef>
+        <bpmn2:targetRef>_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation>
+        <bpmn2:sourceRef>_293AB1A4-1C76-4F0E-8E19-F6111E7888CC_creditApplicationOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>creditApplication</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:serviceTask>
+    <bpmn2:endEvent id="_FA583BA0-A62D-4460-9706-440733256549" name="denied">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[denied]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_0EB2C315-214B-4CAF-8A01-E354E5A6FF58</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:serviceTask id="_0E5E8930-F26C-4041-ACC9-C4937617ECB3" drools:serviceimplementation="Java" drools:serviceinterface="com.bbva.kgtmx.services.CreditApplicationService" drools:serviceoperation="denied" name="Application DENIED" implementation="Java" operationRef="_0E5E8930-F26C-4041-ACC9-C4937617ECB3_ServiceOperation">
+      <bpmn2:documentation><![CDATA[Application DENIED in the manual task revision]]></bpmn2:documentation>
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Application DENIED]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_81FD21DF-074F-4E6D-A62A-EE349D44F41A</bpmn2:incoming>
+      <bpmn2:outgoing>_0EB2C315-214B-4CAF-8A01-E354E5A6FF58</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="_0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationInputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationInputXItem" name="creditApplication"/>
+        <bpmn2:dataOutput id="_0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationOutputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationOutputXItem" name="creditApplication"/>
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>_0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet>
+          <bpmn2:dataOutputRefs>_0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:sourceRef>creditApplication</bpmn2:sourceRef>
+        <bpmn2:targetRef>_0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation>
+        <bpmn2:sourceRef>_0E5E8930-F26C-4041-ACC9-C4937617ECB3_creditApplicationOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>creditApplication</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:serviceTask>
+    <bpmn2:serviceTask id="_35D5DAB0-8458-4516-9E93-1040A3FF0765" drools:serviceimplementation="Java" drools:serviceinterface="com.bbva.kgtmx.services.CreditApplicationService" drools:serviceoperation="approvedByAmount" name="Application APPROVED for amount" implementation="Java" operationRef="_35D5DAB0-8458-4516-9E93-1040A3FF0765_ServiceOperation">
+      <bpmn2:documentation><![CDATA[Approved by amount less than 10000]]></bpmn2:documentation>
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Application APPROVED for amount]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_DAC9E42B-5440-48F0-9587-2F7799BF2062</bpmn2:incoming>
+      <bpmn2:outgoing>_21BD88BA-0E69-4022-8AB8-9344AFD51E98</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="_35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationInputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationInputXItem" name="creditApplication"/>
+        <bpmn2:dataOutput id="_35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationOutputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationOutputXItem" name="creditApplication"/>
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>_35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet>
+          <bpmn2:dataOutputRefs>_35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:sourceRef>creditApplication</bpmn2:sourceRef>
+        <bpmn2:targetRef>_35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation>
+        <bpmn2:sourceRef>_35D5DAB0-8458-4516-9E93-1040A3FF0765_creditApplicationOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>creditApplication</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:serviceTask>
+    <bpmn2:endEvent id="_ADC3548F-B236-4F22-8696-8C72B338006D" name="approved">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[approved
+]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_21BD88BA-0E69-4022-8AB8-9344AFD51E98</bpmn2:incoming>
+    </bpmn2:endEvent>
+    <bpmn2:exclusiveGateway id="_AC08293D-A516-4BE3-A288-5A106AA41980" name="revisionGateway" gatewayDirection="Diverging">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[revisionGateway]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_FD08EAC8-BCAB-43DF-B117-B5B9DEC0BB22</bpmn2:incoming>
+      <bpmn2:outgoing>_81FD21DF-074F-4E6D-A62A-EE349D44F41A</bpmn2:outgoing>
+      <bpmn2:outgoing>_CA707645-9322-420A-9B1B-C99C3EEDEA04</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:exclusiveGateway id="_B85F96F2-DADA-4925-B863-516C92578E24" drools:dg="_5BCC6B34-AF43-4375-879D-7B2D301BDC65" name="amountGateway" gatewayDirection="Diverging" default="_5BCC6B34-AF43-4375-879D-7B2D301BDC65">
+      <bpmn2:documentation><![CDATA[Evaluates the credit amount ]]></bpmn2:documentation>
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[amountGateway]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_8754FCC8-8096-48A4-9D31-06C6639EB965</bpmn2:incoming>
+      <bpmn2:outgoing>_5BCC6B34-AF43-4375-879D-7B2D301BDC65</bpmn2:outgoing>
+      <bpmn2:outgoing>_DAC9E42B-5440-48F0-9587-2F7799BF2062</bpmn2:outgoing>
+    </bpmn2:exclusiveGateway>
+    <bpmn2:userTask id="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D" name="Credit Application Revision">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Credit Application Revision]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_5BCC6B34-AF43-4375-879D-7B2D301BDC65</bpmn2:incoming>
+      <bpmn2:outgoing>_FD08EAC8-BCAB-43DF-B117-B5B9DEC0BB22</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_TaskNameInputX" drools:dtype="Object" itemSubjectRef="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_TaskNameInputXItem" name="TaskName"/>
+        <bpmn2:dataInput id="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationInputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationInputXItem" name="creditApplication"/>
+        <bpmn2:dataInput id="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_SkippableInputX" drools:dtype="Object" itemSubjectRef="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_SkippableInputXItem" name="Skippable"/>
+        <bpmn2:dataInput id="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_PriorityInputX" drools:dtype="Object" itemSubjectRef="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_PriorityInputXItem" name="Priority"/>
+        <bpmn2:dataOutput id="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationOutputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationOutputXItem" name="creditApplication"/>
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_TaskNameInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_SkippableInputX</bpmn2:dataInputRefs>
+          <bpmn2:dataInputRefs>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_PriorityInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet>
+          <bpmn2:dataOutputRefs>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_TaskNameInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[creditApplicationRevision]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_TaskNameInputX]]></bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:sourceRef>creditApplication</bpmn2:sourceRef>
+        <bpmn2:targetRef>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_SkippableInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[true]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_SkippableInputX]]></bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:targetRef>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_PriorityInputX</bpmn2:targetRef>
+        <bpmn2:assignment>
+          <bpmn2:from xsi:type="bpmn2:tFormalExpression"><![CDATA[1]]></bpmn2:from>
+          <bpmn2:to xsi:type="bpmn2:tFormalExpression"><![CDATA[_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_PriorityInputX]]></bpmn2:to>
+        </bpmn2:assignment>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation>
+        <bpmn2:sourceRef>_9ED3226B-A9C0-4ADE-BC51-FFD35931247D_creditApplicationOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>creditApplication</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:userTask>
+    <bpmn2:businessRuleTask id="_4338A14D-A2E3-486E-BB87-A0106C7D11CF" drools:ruleFlowGroup="creditApplication" name="Evaluate credit amount" implementation="http://www.jboss.org/drools/rule">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[Evaluate credit amount]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:incoming>_DD98776F-F4FC-4F66-A84D-F3B152E7FE0D</bpmn2:incoming>
+      <bpmn2:outgoing>_8754FCC8-8096-48A4-9D31-06C6639EB965</bpmn2:outgoing>
+      <bpmn2:ioSpecification>
+        <bpmn2:dataInput id="_4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationInputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationInputXItem" name="creditApplication"/>
+        <bpmn2:dataOutput id="_4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationOutputX" drools:dtype="com.bbva.kgtmx.model.CreditApplication" itemSubjectRef="__4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationOutputXItem" name="creditApplication"/>
+        <bpmn2:inputSet>
+          <bpmn2:dataInputRefs>_4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationInputX</bpmn2:dataInputRefs>
+        </bpmn2:inputSet>
+        <bpmn2:outputSet>
+          <bpmn2:dataOutputRefs>_4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationOutputX</bpmn2:dataOutputRefs>
+        </bpmn2:outputSet>
+      </bpmn2:ioSpecification>
+      <bpmn2:dataInputAssociation>
+        <bpmn2:sourceRef>creditApplication</bpmn2:sourceRef>
+        <bpmn2:targetRef>_4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationInputX</bpmn2:targetRef>
+      </bpmn2:dataInputAssociation>
+      <bpmn2:dataOutputAssociation>
+        <bpmn2:sourceRef>_4338A14D-A2E3-486E-BB87-A0106C7D11CF_creditApplicationOutputX</bpmn2:sourceRef>
+        <bpmn2:targetRef>creditApplication</bpmn2:targetRef>
+      </bpmn2:dataOutputAssociation>
+    </bpmn2:businessRuleTask>
+    <bpmn2:startEvent id="_C5F7DC5F-5760-46F9-902D-C66DE6FF7BE3" name="startProcess">
+      <bpmn2:extensionElements>
+        <drools:metaData name="elementname">
+          <drools:metaValue><![CDATA[startProcess]]></drools:metaValue>
+        </drools:metaData>
+      </bpmn2:extensionElements>
+      <bpmn2:outgoing>_DD98776F-F4FC-4F66-A84D-F3B152E7FE0D</bpmn2:outgoing>
+    </bpmn2:startEvent>
+  </bpmn2:process>
+  <bpmndi:BPMNDiagram>
+    <bpmndi:BPMNPlane bpmnElement="creditApplications">
+      <bpmndi:BPMNShape id="shape__C5F7DC5F-5760-46F9-902D-C66DE6FF7BE3" bpmnElement="_C5F7DC5F-5760-46F9-902D-C66DE6FF7BE3">
+        <dc:Bounds height="56" width="56" x="315" y="230"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__4338A14D-A2E3-486E-BB87-A0106C7D11CF" bpmnElement="_4338A14D-A2E3-486E-BB87-A0106C7D11CF">
+        <dc:Bounds height="102" width="154" x="408" y="207"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__9ED3226B-A9C0-4ADE-BC51-FFD35931247D" bpmnElement="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D">
+        <dc:Bounds height="102" width="154" x="763" y="207"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__B85F96F2-DADA-4925-B863-516C92578E24" bpmnElement="_B85F96F2-DADA-4925-B863-516C92578E24">
+        <dc:Bounds height="56" width="56" x="608" y="230"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__AC08293D-A516-4BE3-A288-5A106AA41980" bpmnElement="_AC08293D-A516-4BE3-A288-5A106AA41980">
+        <dc:Bounds height="56" width="56" x="966" y="230"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__ADC3548F-B236-4F22-8696-8C72B338006D" bpmnElement="_ADC3548F-B236-4F22-8696-8C72B338006D">
+        <dc:Bounds height="56" width="56" x="608" y="528"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__35D5DAB0-8458-4516-9E93-1040A3FF0765" bpmnElement="_35D5DAB0-8458-4516-9E93-1040A3FF0765">
+        <dc:Bounds height="102" width="154" x="559" y="373"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__0E5E8930-F26C-4041-ACC9-C4937617ECB3" bpmnElement="_0E5E8930-F26C-4041-ACC9-C4937617ECB3">
+        <dc:Bounds height="102" width="154" x="1102" y="207"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__FA583BA0-A62D-4460-9706-440733256549" bpmnElement="_FA583BA0-A62D-4460-9706-440733256549">
+        <dc:Bounds height="56" width="56" x="1151" y="367"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__293AB1A4-1C76-4F0E-8E19-F6111E7888CC" bpmnElement="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC">
+        <dc:Bounds height="102" width="154" x="917" y="367"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="shape__71B41A59-0DBB-4A28-BDAF-CECC6C7A3F4E" bpmnElement="_71B41A59-0DBB-4A28-BDAF-CECC6C7A3F4E">
+        <dc:Bounds height="56" width="56" x="966" y="522"/>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="edge_shape__C5F7DC5F-5760-46F9-902D-C66DE6FF7BE3_to_shape__4338A14D-A2E3-486E-BB87-A0106C7D11CF" bpmnElement="_DD98776F-F4FC-4F66-A84D-F3B152E7FE0D">
+        <di:waypoint x="343" y="258"/>
+        <di:waypoint x="408" y="258"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__4338A14D-A2E3-486E-BB87-A0106C7D11CF_to_shape__B85F96F2-DADA-4925-B863-516C92578E24" bpmnElement="_8754FCC8-8096-48A4-9D31-06C6639EB965">
+        <di:waypoint x="485" y="258"/>
+        <di:waypoint x="636" y="258"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__B85F96F2-DADA-4925-B863-516C92578E24_to_shape__9ED3226B-A9C0-4ADE-BC51-FFD35931247D" bpmnElement="_5BCC6B34-AF43-4375-879D-7B2D301BDC65">
+        <di:waypoint x="636" y="258"/>
+        <di:waypoint x="840" y="258"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__9ED3226B-A9C0-4ADE-BC51-FFD35931247D_to_shape__AC08293D-A516-4BE3-A288-5A106AA41980" bpmnElement="_FD08EAC8-BCAB-43DF-B117-B5B9DEC0BB22">
+        <di:waypoint x="840" y="258"/>
+        <di:waypoint x="994" y="258"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__B85F96F2-DADA-4925-B863-516C92578E24_to_shape__35D5DAB0-8458-4516-9E93-1040A3FF0765" bpmnElement="_DAC9E42B-5440-48F0-9587-2F7799BF2062">
+        <di:waypoint x="636" y="258"/>
+        <di:waypoint x="636" y="424"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__AC08293D-A516-4BE3-A288-5A106AA41980_to_shape__0E5E8930-F26C-4041-ACC9-C4937617ECB3" bpmnElement="_81FD21DF-074F-4E6D-A62A-EE349D44F41A">
+        <di:waypoint x="994" y="258"/>
+        <di:waypoint x="1179" y="258"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__AC08293D-A516-4BE3-A288-5A106AA41980_to_shape__293AB1A4-1C76-4F0E-8E19-F6111E7888CC" bpmnElement="_CA707645-9322-420A-9B1B-C99C3EEDEA04">
+        <di:waypoint x="994" y="258"/>
+        <di:waypoint x="994" y="418"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__35D5DAB0-8458-4516-9E93-1040A3FF0765_to_shape__ADC3548F-B236-4F22-8696-8C72B338006D" bpmnElement="_21BD88BA-0E69-4022-8AB8-9344AFD51E98">
+        <di:waypoint x="636" y="424"/>
+        <di:waypoint x="636" y="556"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__0E5E8930-F26C-4041-ACC9-C4937617ECB3_to_shape__FA583BA0-A62D-4460-9706-440733256549" bpmnElement="_0EB2C315-214B-4CAF-8A01-E354E5A6FF58">
+        <di:waypoint x="1179" y="258"/>
+        <di:waypoint x="1179" y="395"/>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="edge_shape__293AB1A4-1C76-4F0E-8E19-F6111E7888CC_to_shape__71B41A59-0DBB-4A28-BDAF-CECC6C7A3F4E" bpmnElement="_50BE6800-F3DC-4A96-B5AD-F1E8C9E1956C">
+        <di:waypoint x="994" y="418"/>
+        <di:waypoint x="1043" y="522"/>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmn2:relationship type="BPSimData">
+    <bpmn2:extensionElements>
+      <bpsim:BPSimData>
+        <bpsim:Scenario id="default" name="Simulationscenario">
+          <bpsim:ScenarioParameters/>
+          <bpsim:ElementParameters elementRef="_C5F7DC5F-5760-46F9-902D-C66DE6FF7BE3">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_4338A14D-A2E3-486E-BB87-A0106C7D11CF">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_9ED3226B-A9C0-4ADE-BC51-FFD35931247D">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_35D5DAB0-8458-4516-9E93-1040A3FF0765">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_0E5E8930-F26C-4041-ACC9-C4937617ECB3">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+          <bpsim:ElementParameters elementRef="_293AB1A4-1C76-4F0E-8E19-F6111E7888CC">
+            <bpsim:TimeParameters>
+              <bpsim:ProcessingTime>
+                <bpsim:NormalDistribution mean="0" standardDeviation="0"/>
+              </bpsim:ProcessingTime>
+            </bpsim:TimeParameters>
+            <bpsim:ResourceParameters>
+              <bpsim:Availability>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Availability>
+              <bpsim:Quantity>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:Quantity>
+            </bpsim:ResourceParameters>
+            <bpsim:CostParameters>
+              <bpsim:UnitCost>
+                <bpsim:FloatingParameter value="0"/>
+              </bpsim:UnitCost>
+            </bpsim:CostParameters>
+          </bpsim:ElementParameters>
+        </bpsim:Scenario>
+      </bpsim:BPSimData>
+    </bpmn2:extensionElements>
+    <bpmn2:source>_5dUAoGsPEDicvadNCJJcIQ</bpmn2:source>
+    <bpmn2:target>_5dUAoGsPEDicvadNCJJcIQ</bpmn2:target>
+  </bpmn2:relationship>
+</bpmn2:definitions>

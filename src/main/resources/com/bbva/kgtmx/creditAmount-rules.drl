@@ -1,0 +1,26 @@
+package com.bbva.kgtmx;
+
+import com.bbva.kgtmx.model.CreditApplication;
+
+
+rule "Credit Application Approved" ruleflow-group "creditApplication"
+
+when
+    $creditApplication: CreditApplication(amount < 10000)
+then
+    modify($creditApplication) {
+    	isApproved(true)
+    };
+
+end
+
+rule "Credit Application Denied" ruleflow-group "creditApplication"
+
+when
+    $creditApplication: CreditApplication(amount >= 10000)
+then
+    modify($creditApplication) {
+    	isApproved(false)
+    };
+
+end
